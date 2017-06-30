@@ -1,124 +1,71 @@
-# New project
+You can access a remote terminal on your Raspberry Pi using the Secure Shell tool (SSH).
 
-Each project contains a set of directories for each language, you're set up now with an `en` directory that contains the necessary files to get you going.
+SSH is disabled by default on the Raspberry Pi, so you will first need to eenable it.
 
-* [meta.yml](#metayml)
-* [Steps - step_1.md, step_2.md, etc](#steps)
+- Click on `Menu` --> `Preferences` --> `Raspberry Pi Configuration`
 
+	![configuration](images/config.png)
 
-## meta.yml
+- Click on the `Interfaces` tab. Then check the radio button next to `SSH` to enable it.
 
-The `meta.yml` file sets lots of basic information for the project.
+	![enable](images/ssh-enable.png)
 
-``` yml
-title: The title of the project
-hero_image: images/banner.png # The image used on the listing view and in the project header
-description: Project description # Used on the listing view
-original_url: https://codeclubprojects.org/en-GB/scratch/rock-band # Provides a link back to the original project
-theme: cc-prototype # sets the colour scheme
-duration: 1 # 1, 2 or 3
-listed: false # A boolean - `true` or`false` - that controls whether the project will appear on the listing view
-ingredient: false # A boolean - `true` or`false` - that controls whether the project will appear on the listing view if published to master branch
-interests: "jokes/pranks, sports, art/design, photography, games, outside/weather/nature, space, animals, music/sound"
-technologies: "scratch, python, html/css, micro:bit"
-steps: # A list of all the steps
-  - title: How to get started # Used as the sidebar title for the step
-```
+- Click `OK` to finish.
 
-The list for interests and technologies is generated from the tags defined via the admin site. Once a project is tagged with e.g scratch it will start appearing in the generated list for new projects.
+- To find the IP address of your Raspberry Pi, you can open a terminal and type:
 
-## Steps
+	```bash
+	hostname -I
+	```
 
-* [Links](#links)
-* [Resources](#resources)
-* [Images](#images)
-* [Challenges](#challenges)
-* [Definitions](#definitions)
-* [Hints](#hints)
-* [Collapsed ingredients](#collapsed-ingredients)
+Now you can access your Raspberry Pi via SSH from another networked computer, using the instructions below.
 
-Project steps are written in the [Kramdown](https://kramdown.gettalong.org/) variety of markdown. There is a [quick reference guide](https://kramdown.gettalong.org/quickref.html) and [full syntax documentation](https://kramdown.gettalong.org/syntax.html). A [custom kramdown extension](https://github.com/RaspberryPiFoundation/kramdown_rpf) is used for hints, challenges & ingredients.
+### Nix-based operating systems
 
-### Links, resources & images
+- If your are using OS X or a Linux-based OS, then SSH is native to the operating system. 
 
-See [kramdown documentation](https://kramdown.gettalong.org/quickref.html#links-and-images) for more details.
+- Open a terminal and type:
 
-#### Links
+	``` bash
+	ssh pi@10.10.10.10
+	```
 
-A [link](http://kramdown.gettalong.org) to the kramdown homepage.
+- Don't forget to replace 10.10.10.10 with the IP address of the Raspberry Pi.
 
-You can add  a link that opens in a new browser window/tab [like this](https://google.com/){:target="_blank"}
+- Then you can type in the password when prompted; it is usually `raspberry` unless you have changed it.
 
-#### Resources
+### Chrome OS and Chrome browser
 
-A [link to a file in the resources directory](resources/worksheet.pdf){:download='filename.pdf'}. The download part will make the file automatically download rather than be rendered in the browser, the filename you'd like the file to be saved with is the second bit after the `=`. The `/learning` application will ensure the resource is available.
+- If you are using Chrome OS or have access to the Chrome browser, then there's a Chrome app that allows access over SSH. You can find the Secure Shell App in the [Chrome Web Store](https://chrome.google.com/webstore/detail/secure-shell/pnhechapfaindjhompbnflcldabbghjo?hl=en).
 
-#### Images
+	![](images/chrome-ssh.png)
 
-![Banner image](images/banner.png) - the link text becomes the alternative text for the image. The `/learning` application will ensure the image is available.
+- Once installed, click on the app to open it:
 
-#### Challenges
+	![](images/chrome-ssh1.png)
 
-``` markdown
---- challenge ---
+- Now you can access the Raspberry Pi by typing in the IP address:
 
-## Challenge: Improving your drum
+	![](images/chrome-ssh2.png)
 
-* Any markdown in here
-* will be parsed as normal
+- Then type in the password:
 
---- /challenge ---
-```
+	![](images/chrome-ssh3.png)
 
+### PuTTY (on Windows)
 
-### Definitions
+- PuTTY is an app that provides SSH access on Windows.
 
-Definitions can be written using HTML abbreviations, which are a standard part of [kramdown](https://kramdown.gettalong.org/quickref.html#abbreviations)
+- Download PuTTY from [this site](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html){:target="_blank"}.
 
-```
-To do this you might require a variable or a two word definition.
+- Once installed, you can open PuTTY from the Start menu and type in the IP address:
 
-*[variable]: An object that has a name and stores a value.
+	![](images/ssh-win.png)
 
-*[two word]: Definitions are markdown, and can have [links](http://kramdown.gettalong.org) etc
-```
+- If it's your first time connecting to this Raspberry Pi, you'll get a warning dialogue box, so click `Yes` to connect:
 
+	![](images/ssh-win2.png)
 
-### Hints
+- Then you need to enter the username and password for the Raspberry Pi (usually `pi` and `raspberry`):
 
-A header for the hint, and all the html markup for hints will be automatically added.
-
-```
---- hints ---
---- hint ---
-
-Here's a hint of how to do this project.
-
-Any markdown you like within a hint:
-* item 1
-* item 2
-
---- /hint ---
---- hint ---
-Hint 2
-
---- /hint ---
---- hint ---
-
-Hint 3
---- /hint ---
---- hint ---
-Hint 4
---- /hint ---
-
---- /hints ---
-```
-
-### Ingredients
-
-An ingredient is a bit of reusable content from another project. All ingredients appear collapsed to users, the title for the collapsed element is the title of the ingredient project.
-
-To add an ingredient to your content:
-```
-[[[generic-scratch-new-project]]]
-```
+	![](images/ssh-win3.png)
