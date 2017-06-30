@@ -17,6 +17,11 @@ SSH is disabled by default on the Raspberry Pi, so you will first need to eenabl
 	```bash
 	hostname -I
 	```
+- As you have now enabled SSH, it might be a good idea to change your password. Open up a terminal and type:
+
+	```bash
+	passwd
+	```
 
 Now you can access your Raspberry Pi via SSH from another networked computer, using the instructions below.
 
