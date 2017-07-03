@@ -1,8 +1,8 @@
 You can access a remote terminal on your Raspberry Pi using the Secure Shell tool (SSH).
 
-SSH is disabled by default on the Raspberry Pi, so you will first need to eenable it.
+SSH is disabled by default on the Raspberry Pi, so you will first need to enable it.
 
-- Click on `Menu` --> `Preferences` --> `Raspberry Pi Configuration`
+- Click on `Menu` > `Preferences` > `Raspberry Pi Configuration`
 
 	![configuration](images/config.png)
 
