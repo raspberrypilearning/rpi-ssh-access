@@ -17,7 +17,7 @@ SSH is disabled by default on the Raspberry Pi, so you first need to enable it.
 	```bash
 	hostname -I
 	```
-- As you have now enabled SSH, it is a good idea to change your password. Open up a terminal and type:
+- As you have now enabled SSH, it is a good idea to change your password. In a terminal window, type:
 
 	```bash
 	passwd
