@@ -1,3 +1,3 @@
 # rpi-ssh-access
 
-Don't forget to update the project name in LICENSE.md
+Using SSH to access a Raspberry Pi
